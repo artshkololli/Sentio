@@ -6,9 +6,11 @@
 body{
     background: #797979;
     overflow: hidden;
+    overflow-y: scroll;
 }
 .loading-text {
     max-width: 500px;
+    animation: slide 1.5s ease-in;
 }
 .pre-loader {
     position: fixed;
@@ -21,15 +23,23 @@ body{
     align-items: center;
     height: 100%;
     width: 100%;
-}
-.pre-loader.hidden {
-    animation: fadeOut 6s; /** change to 1s */
+    animation: slideup 1.5s 2.5s ease-in;
     animation-fill-mode: forwards;
 }
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
+@keyframes slideup {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-1000px);
+    }
+}
+@keyframes slide {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
 .header{
@@ -40,7 +50,7 @@ body{
     width: 100px;
     height: 350px;
     position: fixed;
-    top: 30%;
+    top: 0;
     left: 0;
     padding: 30px 15px;
     z-index: 1;
@@ -50,12 +60,6 @@ body{
     transition: width 0.2s;
     background: #0002;
 }
-@media only screen and (max-width: 450px) {
-    .side-nav {
-      top: 0;
-      left: 0;
-    }
-  }
 .logo{
     display: flex;
     align-items: center;
@@ -160,7 +164,7 @@ body{
 @keyframes zoom-out{
     100%{
         width: 110%;
-        height: 110%;
+        height: 100%;
     }
 }
 .slider1{
@@ -190,4 +194,7 @@ body{
     100%{
         visibility: visible;
     }
+}
+.Projects h1{
+ font-size: 50px;
 }
