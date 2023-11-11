@@ -231,6 +231,11 @@ body{
     font-size: 5vw;
     padding: 10px;
 }
+.explore a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 4vw;
+}
 .gallery{
     display: flex;
     align-items: center;
@@ -267,6 +272,9 @@ body{
 @media only screen and (max-width: 700px) {
     .headline{
         font-size: 8vw;
+    }
+    .explore a{
+        font-size: 7vw;
     }
     .gallery {
         flex-direction: column;
