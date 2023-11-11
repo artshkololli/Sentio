@@ -9,7 +9,6 @@ body{
     overflow-y: scroll;
 }
 /*Header*/
-/*Header*/
 .header{
     width: 100%;
     height: 100vh;
@@ -27,6 +26,7 @@ body{
     flex-direction: column;
     transition: width 0.2s;
     background: #0002;
+    border-radius: 20px;
 }
 .logo{
     display: flex;
@@ -53,7 +53,7 @@ body{
     padding: 0 15px;
 }
 .side-nav ul li{
-    margin: 30px 0;
+    margin: 35px 0;
     display: flex;
     align-items: center;
     justify-content:space-evenly;
@@ -64,8 +64,8 @@ body{
     margin-right: 0;
 }
 .side-nav ul li a{
-    color: #343434;
-    font-size: large;
+    color: black;
+    font-size: larger;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
@@ -75,7 +75,6 @@ body{
     width: 170px;
 }
 .side-nav:hover .logo{
-    margin-top: 10px;
     width: 100%;
     justify-content: flex-start;
 }
@@ -176,6 +175,66 @@ body{
     }
 }
 /*Projects*/
-.Projects h1{
- font-size: 50px;
+.Projects{
+    width: 100%;
+    height: 100%;
+    background: #797979;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.headline{
+    color: aliceblue;
+    font-size: 5vw;
+    padding: 10px;
+}
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-box{
+    width: 20vw;
+    height: 50vw;
+    margin: 10px;
+    border-radius: 50px;
+    position: relative;
+    transition:all 0.5s;
+}
+.img-box h1{
+    color:aliceblue;
+    position: absolute;
+    font-size: 3vw;
+    top: 50%;
+    right: 30%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+@media only screen and (min-width: 700px) {
+
+    .img-box:hover{
+        width: 35vw;
+        cursor: pointer;
+        filter: brightness(80%);
+    }
+    .img-box:hover h1{
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .headline{
+        font-size: 8vw;
+    }
+    .gallery {
+        flex-direction: column;
+    }
+    .img-box{
+        width: 80vw;
+        transition: none;
+    }
+    .img-box h1{
+        font-size: 7vw;
+        opacity: 1;
+    }
 }
