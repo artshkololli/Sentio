@@ -1,3 +1,8 @@
+html{
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 *{
     margin: 0;
     padding: 0;
@@ -118,7 +123,6 @@ body{
 .about-section{
     overflow: hidden;
     padding: 100px 0;
-    
     background-size: 55%;
 }
 .container{
@@ -131,13 +135,13 @@ body{
     background: #0004;
 }
 .container h1{
-    font-size: 4vw;
+    font-size: 3vw;
     margin-bottom: 30px;
     color: #e4e4e4;
     font-weight: 900;
 }
 .text{
-    font-size: 2vw;
+    font-size: 1vw;
     color: #e4e4e4;
     line-height: 30px;
     text-align: justify;
@@ -148,7 +152,7 @@ body{
     color: #e4e4e4;
     justify-content: space-between;
     font-weight: 700;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 @media screen and (max-width:1200px) {
     .container{
@@ -167,6 +171,7 @@ body{
 @media screen and (max-width:600px) {
     .about-section{
         background-size: 100%;
+        height:fit-content;
         padding: 0;
     }
     .container{
@@ -176,6 +181,11 @@ body{
         font-size: 10vw;
     }
     .skills,.text{
-        font-size: 5vw;
+        font-size: 4vw;
+        margin-top: 10px;
+    }
+    .skills{
+        padding-top: 10px;
+        border-top:3px solid #797979;
     }
 }
