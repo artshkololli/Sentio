@@ -12,3 +12,12 @@ function slider() {
     x[myIndex-1].style.display = "block";  
     setTimeout(slider, 4000); // Change image every 2 seconds
 }
+
+//sidebar
+
+const nav = document.querySelector('nav');
+const toggle_btn = document.getElementById('toggle-btn');
+
+toggle_btn.onclick = function() {
+    nav.classList.toggle('hide');
+};
