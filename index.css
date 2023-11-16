@@ -341,13 +341,13 @@ ul.sidebar-menu li:focus-within > ul{
 }
 .headline{
     color: aliceblue;
-    font-size: 5vw;
+    font-size: 3vw;
     padding: 10px;
 }
 .explore a{
     text-decoration: none;
     color: aliceblue;
-    font-size: 4vw;
+    font-size: 2vw;
 }
 .gallery{
     display: flex;
@@ -365,7 +365,7 @@ ul.sidebar-menu li:focus-within > ul{
 .img-box h1{
     color:aliceblue;
     position: absolute;
-    font-size: 4vw;
+    font-size: 3vw;
     top: 50%;
     opacity: 0;
     transition: opacity 1s;
