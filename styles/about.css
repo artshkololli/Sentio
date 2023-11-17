@@ -134,10 +134,13 @@ ul.sidebar-menu li:focus-within > ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
-}
-div.navbar-m{
+    position: fixed;
+    top: 0;
     background: #797979;
+    width: 100%;
+    padding: 0 24px;
+    overflow: hidden;
+    z-index: 10;
 }
 .navbar-m li{
     list-style: none;
@@ -160,8 +163,8 @@ div.navbar-m{
     background: #797979;
     align-items: center;
     gap: 60px;
-    z-index: 1000;
     height: 100%;
+    z-index: 10;
 }
 .hamburger{
     display: none;
@@ -214,7 +217,7 @@ div.navbar-m{
         transition: 0.3s;
     }
     .nav-item{
-        margin: 16px 0;
+        margin-top: 16px;
     }
     .nav-item ul{
         margin-top: 20px;
@@ -232,6 +235,7 @@ div.navbar-m{
         display: block;
     }
 }
+/*about*/
 .about{
     min-height: 100vh;
     display: flex;

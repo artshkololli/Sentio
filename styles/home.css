@@ -134,7 +134,13 @@ ul.sidebar-menu li:focus-within > ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    background: #797979;
+    width: 100%;
     padding: 0 24px;
+    overflow: hidden;
+    z-index: 10;
 }
 .navbar-m li{
     list-style: none;
@@ -157,8 +163,8 @@ ul.sidebar-menu li:focus-within > ul{
     background: #797979;
     align-items: center;
     gap: 60px;
-    z-index: 1000;
     height: 100%;
+    z-index: 10;
 }
 .hamburger{
     display: none;
@@ -211,7 +217,7 @@ ul.sidebar-menu li:focus-within > ul{
         transition: 0.3s;
     }
     .nav-item{
-        margin: 16px 0;
+        margin-top: 16px;
     }
     .nav-item ul{
         margin-top: 20px;
