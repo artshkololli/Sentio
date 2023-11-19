@@ -217,6 +217,9 @@ ul.sidebar-menu li:focus-within > ul{
     .nav-item{
         margin-top: 16px;
     }
+    li.nav-item {
+        width: 100%;
+    }
     .nav-item ul{
         margin-top: 20px;
         border-top:1px solid white ;
@@ -287,7 +290,6 @@ button.active {
     height: 210px;
     object-fit: cover;
     border-radius:  8px 8px 0 0;
-
 }
 .card-body{
     padding: 15px 20px 20px;

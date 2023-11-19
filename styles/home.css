@@ -216,6 +216,9 @@ ul.sidebar-menu li:focus-within > ul{
         text-align: center;
         transition: 0.3s;
     }
+    li.nav-item {
+        width: 100%;
+    }
     .nav-item{
         margin-top: 16px;
     }
@@ -230,6 +233,9 @@ ul.sidebar-menu li:focus-within > ul{
     }
     .nav-menu.active{
         left: 0;
+    }
+    .nav-item li:hover{
+        display: block;
     }
     li.nav-item:hover > ul{
         display: block;
