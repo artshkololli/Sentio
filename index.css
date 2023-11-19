@@ -379,6 +379,10 @@ ul.sidebar-menu li:focus-within > ul{
     opacity: 0;
     transition: opacity 1s;
 }
+.img-box a{
+    text-decoration: none;
+    color: white;
+}
 @media only screen and (min-width: 700px) {
 
     .img-box:hover{
