@@ -83,14 +83,50 @@
         </div>
         <div class="filtered-cards">
             <div class="card" data-name="residential">
-                <img src="../images/residential.png" alt="residential"/>
+                <img id="myImg" src="../images/residential.png" alt="residential"/>
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="../images/residential.png" style="width:100%">
+                        <div id="caption"></div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="../images/industrial.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="../images/urban_design.jpg" style="width:100%">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
                 <div class="card-body">
                     <h2 class="card-title">Residential Architecture</h2>
                     <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </div>
             <div class="card" data-name="offices-and-headquarters">
-                <img src="../images/offices_and_headquarters.jpg" alt="offices-and-headquarters"/>
+                <img id="myImg" src="../images/offices_and_headquarters.jpg" alt="offices-and-headquarters"/>
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="../images/offices_and_headquarters.jpg" style="width:100%">
+                        <div id="caption"></div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="../images/industrial.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="../images/urban_design.jpg" style="width:100%">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
                 <div class="card-body">
                     <h2 class="card-title">Offices and Headquarters</h2>
                     <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
