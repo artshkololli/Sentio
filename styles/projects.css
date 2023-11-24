@@ -264,9 +264,41 @@ button{
     margin: 20px 20px;
     gap: 15px;
 }
-button.active {
-    background: black;
-    color: white;
+.filter-buttons button{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    height: 48px;
+}
+.filter-buttons button:hover{
+    color: #fff;
+    background-color: #616467;
+}
+.filter-buttons a{
+    display: block;
+    height: 20px;
+    text-decoration: none;
+    color: black;
+}
+button.active{
+    color: black;
+    background-color: #616467;
 }
 .filtered-cards{
     display: flex;
@@ -277,8 +309,8 @@ button.active {
     flex-wrap: wrap;
 }
 .card{
-    flex-basis: 600px;
-    background: white;
+    flex-basis: 700px;
+    background: black;
     padding: 3px;
     border-radius: 8px;
 }
@@ -292,14 +324,16 @@ button.active {
     border-radius:  8px 8px 0 0;
 }
 .card-body{
+    background-color: #797979;
     padding: 15px 20px 20px;
 }
 .card-title{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     color: black;
 }
 .card-text{
+    font-weight: 500;
     font-size: 18px;
     color: black;
 }
@@ -308,130 +342,19 @@ button.active {
         margin-top: 100px;
     }
 }
-/*Image Modal*/
-
-#myImg{
-    cursor: pointer;
-    transition: 0.3s;
-}
-#myImg:hover{
-    opacity: 0.7;
-}
-.modal{
-    display: none;
-    position: fixed;
-    z-index: 3;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-}
-.modal-content{
-    margin: auto;
-    display: block;
-    width: 100%;
-    max-width: 800px;
-}
-#caption{
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 800px;
-    text-align: center;
-    color: aliceblue;
-    padding: 10px 0;
-    height: 50px;
-}
-.modal-content, #caption {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-@-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-}
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-}
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-  
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-@media only screen and (max-width: 700px){
-    .close{
-        top: 100px;
-        right: 10px;
-    }
-    .modal-content {
-        width: 100%;
-    }
-}
 /*Modal Slider*/
-.mySlides {
-    display: none
+.slider{
+    cursor: grab;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: auto;
 }
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.slider img{
+    height: 70vh;
+    object-fit: cover;
+    width: 100%;
 }
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1s;
+.slider img:first-child{
+    margin-left: 0px;
 }
 
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
-}
-
-    

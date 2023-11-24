@@ -39,42 +39,59 @@ const filterCards = e =>{
 
 filterButtons.forEach(button =>button.addEventListener("click",filterCards));
 
-//Image Modal
-var modal = document.getElementById("myModal");
-var img = document.getElementById("myImg");
-var captionText = document.getElementById("caption");
-
-img.onclick = function(){
-  modal.style.display = "block";
-  captionText.innerHTML = this.alt;
-}
-
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-
 //Slider Modal
 
-let slideIndex = 1;
-showSlides(slideIndex);
+const sliders = document.querySelectorAll(".slider");
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+for (let i = 0; i < sliders.length; i++) {
+  
+  firstImg = sliders[i].querySelectorAll(".slider img")[0];
+  let isDragStart = false , isDragging=false , prevPageX , prevScrollLeft , positionDiff;
+  let firstImgWidth = firstImg.clientWidth;
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+  const autoSlide = () =>{
+    if(sliders[i].scrollLeft == (sliders[i].scrollWidth - sliders[i].clientWidth)) return;
+  
+    positionDiff=Math.abs(positionDiff);
+    let firstImgWidth=firstImg.clientWidth;
+    let valDifference=firstImgWidth - positionDiff;
+  
+    if(sliders[i].scrollLeft > prevScrollLeft){
+      return sliders[i].scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
     }
-    slides[slideIndex-1].style.display = "block";  
+    sliders[i].scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
   }
+  
+  const dragStart = (e) =>{
+    isDragStart=true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft=sliders[i].scrollLeft;
+  }
+  
+  const dragStop = () =>{
+    isDragStart=false;
+    if(!isDragging){
+      return;
+    }
+    isDragging=false;
+    autoSlide();
+  }
+  
+  const dragging = (e) =>{
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging=true;
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    sliders[i].scrollLeft = prevScrollLeft - positionDiff;
+  }
+  
+  sliders[i].addEventListener("mousedown",dragStart);
+  sliders[i].addEventListener("touchstart",dragStart);
+  
+  sliders[i].addEventListener("mousemove",dragging);
+  sliders[i].addEventListener("touchmove",dragging);
+  
+  sliders[i].addEventListener("mouseup",dragStop);
+  sliders[i].addEventListener("mouseleave",dragStop);
+  sliders[i].addEventListener("touchend",dragStop);
+}

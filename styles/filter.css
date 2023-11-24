@@ -256,10 +256,6 @@ button{
     cursor: pointer;
     box-shadow:  0 0 10px rgba(0, 0, 0, 0.05);
 }
-button a{
-    text-decoration: none;
-    color: black;
-}
 .filter-buttons{
     display: flex;
     justify-content: center;
@@ -268,12 +264,41 @@ button a{
     margin: 20px 20px;
     gap: 15px;
 }
-button.active {
-    background: black;
-    color: white;
+.filter-buttons button{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    height: 48px;
 }
-button.active a{
-    color: white;
+.filter-buttons button:hover{
+    color: #fff;
+    background-color: #616467;
+}
+.filter-buttons a{
+    display: block;
+    height: 20px;
+    text-decoration: none;
+    color: black;
+}
+button.active{
+    color: black;
+    background-color: #616467;
 }
 .filtered-cards{
     display: flex;
@@ -284,8 +309,8 @@ button.active a{
     flex-wrap: wrap;
 }
 .card{
-    flex-basis: 400px;
-    background: white;
+    flex-basis: 700px;
+    background: black;
     padding: 3px;
     border-radius: 8px;
 }
@@ -294,19 +319,21 @@ button.active a{
 }
 .card img{
     width: 100%;
-    height: 210px;
+    height: 70vh;
     object-fit: cover;
     border-radius:  8px 8px 0 0;
 }
 .card-body{
+    background-color: #797979;
     padding: 15px 20px 20px;
 }
 .card-title{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     color: black;
 }
 .card-text{
+    font-weight: 500;
     font-size: 18px;
     color: black;
 }
@@ -314,4 +341,19 @@ button.active a{
     .container h1{
         margin-top: 100px;
     }
+}
+/*Modal Slider*/
+.slider{
+    cursor: grab;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: auto;
+}
+.slider img{
+    height: 70vh;
+    object-fit: cover;
+    width: 100%;
+}
+.slider img:first-child{
+    margin-left: 0px;
 }

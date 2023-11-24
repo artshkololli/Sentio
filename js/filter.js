@@ -38,3 +38,60 @@ const filterCards = e =>{
 }
 
 filterButtons.forEach(button =>button.addEventListener("click",filterCards));
+
+//Slider Modal
+
+const sliders = document.querySelectorAll(".slider");
+
+for (let i = 0; i < sliders.length; i++) {
+  
+  firstImg = sliders[i].querySelectorAll(".slider img")[0];
+  let isDragStart = false , isDragging=false , prevPageX , prevScrollLeft , positionDiff;
+  let firstImgWidth = firstImg.clientWidth;
+
+  const autoSlide = () =>{
+    if(sliders[i].scrollLeft == (sliders[i].scrollWidth - sliders[i].clientWidth)) return;
+  
+    positionDiff=Math.abs(positionDiff);
+    let firstImgWidth=firstImg.clientWidth;
+    let valDifference=firstImgWidth - positionDiff;
+  
+    if(sliders[i].scrollLeft > prevScrollLeft){
+      return sliders[i].scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    sliders[i].scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+  }
+  
+  const dragStart = (e) =>{
+    isDragStart=true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft=sliders[i].scrollLeft;
+  }
+  
+  const dragStop = () =>{
+    isDragStart=false;
+    if(!isDragging){
+      return;
+    }
+    isDragging=false;
+    autoSlide();
+  }
+  
+  const dragging = (e) =>{
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging=true;
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    sliders[i].scrollLeft = prevScrollLeft - positionDiff;
+  }
+  
+  sliders[i].addEventListener("mousedown",dragStart);
+  sliders[i].addEventListener("touchstart",dragStart);
+  
+  sliders[i].addEventListener("mousemove",dragging);
+  sliders[i].addEventListener("touchmove",dragging);
+  
+  sliders[i].addEventListener("mouseup",dragStop);
+  sliders[i].addEventListener("mouseleave",dragStop);
+  sliders[i].addEventListener("touchend",dragStop);
+}
