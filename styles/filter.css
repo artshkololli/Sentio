@@ -310,9 +310,7 @@ button.active{
 }
 .card{
     flex-basis: 700px;
-    background: black;
     padding: 3px;
-    border-radius: 8px;
 }
 .card.hide{
     display: none;
@@ -321,9 +319,9 @@ button.active{
     width: 100%;
     height: 70vh;
     object-fit: cover;
-    border-radius:  8px 8px 0 0;
 }
 .card-body{
+    border: 1px solid black;
     background-color: #797979;
     padding: 15px 20px 20px;
 }
