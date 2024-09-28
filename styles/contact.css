@@ -398,3 +398,18 @@ ul.sidebar-menu li:focus-within > ul{
         font-size: 15px;
     }
 }
+
+/*FadeIn Animation*/
+
+.hidden{
+    opacity: 0;
+    transition: all 3s;
+}
+.show{
+    opacity: 1;
+}
+@media (prefers-reduced-motion) {
+    .hidden{
+        transition: none;
+    }
+}
