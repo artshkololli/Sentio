@@ -28,6 +28,11 @@ toggle_btn.onclick = function() {
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const navItem = document.getElementById("item-a");
+
+navItem.addEventListener('click', function(){
+  navMenu.classList.toggle('active');
+});
 
 hamburger.addEventListener("click", ()=>{
   hamburger.classList.toggle("active");
