@@ -34,3 +34,9 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el)=>{
   observer.observe(el);
 })
+
+//Reset Contact Form
+
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
